@@ -162,7 +162,7 @@ def test_public_text_and_nested_packets_are_lf_and_english():
             with zipfile.ZipFile(io.BytesIO(raw)) as archive:
                 for item in archive.infolist():
                     if not item.is_dir():check(name+'!/'+item.filename,archive.read(item))
-        elif Path(name).suffix in text or Path(name).name in {'LICENSE','.gitignore'}:
+        elif Path(name).suffix in text or Path(name).name in {'LICENSE','.gitignore','.gitattributes'}:
             assert b'\r' not in raw,name
             assert not any(19968<=ord(char)<=40959 for char in raw.decode('utf-8')),name
     for file in root.rglob('*'):

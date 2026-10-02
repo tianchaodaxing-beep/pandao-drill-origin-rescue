@@ -1,0 +1,4 @@
+# Keep text checkout stable even when core.autocrlf is enabled.
+* text=auto eol=lf
+*.zip -text
+*.whl -text
