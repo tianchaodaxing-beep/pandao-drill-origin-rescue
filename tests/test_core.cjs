@@ -1,6 +1,9 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {solve}=require('../docs/solver.js'),parser=require('../docs/parser.js');
-if(process.argv.includes('--cases')){console.log(JSON.stringify(JSON.parse(fs.readFileSync(0,'utf8')).map(c=>solve(c.pads,c.holes))));process.exit(0);}
+if(process.argv.includes('--cases')){
+const output=JSON.stringify(JSON.parse(fs.readFileSync(0,'utf8')).map(c=>solve(c.pads,c.holes)));
+process.stdout.write(output,error=>{if(error){console.error(error);process.exitCode=1;}});
+}else{
 const sample=n=>fs.readFileSync(path.join(__dirname,'../docs/samples',n),'ascii');
 const pads=parser.copper(sample('copper.gbr')),drill=parser.drill(sample('drill-offset.drl')),report=solve(pads,drill.holes);
 assert.equal(report.status,'recovered');assert.deepEqual(report.translation_mm,[-5,-7]);assert.equal(report.matches.length,7);
@@ -28,3 +31,4 @@ node('copper-file').files=[file('copper.gbr')];node('drill-file').files=[file('a
 console.log('Browser UI state checks passed: invalid local input, actual sample labels, cleared selectors, repeated grid labels, and subsequent local input labels.');
 }
 testInputLabels().catch(error=>{console.error(error);process.exitCode=1;});
+}

@@ -139,7 +139,9 @@ def test_python_browser_solver_equivalence_random_geometry():
         holes=[{'x':x+dx+randomizer.uniform(-.004,.004),'y':y+dy+randomizer.uniform(-.004,.004),'diameter':.8} for x,y in pts]
         cases.append({'pads':pads,'holes':holes})
     node=subprocess.run(['node',str(Path(__file__).with_name('test_core.cjs')),'--cases'],input=json.dumps(cases),text=True,capture_output=True,check=True)
+    assert len(node.stdout.encode('utf-8')) > 65536
     results=json.loads(node.stdout)
+    assert len(results) == len(cases) == 50
     for case,result in zip(cases,results):
         python=solve(case['pads'],case['holes']);assert python['status']==result['status']=='recovered'
         assert python['translation_mm']==pytest.approx(result['translation_mm'],abs=1e-10)

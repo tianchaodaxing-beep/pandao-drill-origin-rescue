@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "drill-origin-rescue"
-version = "0.1.0"
+version = "0.1.1"
 description = "Conservative offline Gerber and Excellon origin mismatch diagnosis"
 requires-python = ">=3.12"
 readme = "README.md"

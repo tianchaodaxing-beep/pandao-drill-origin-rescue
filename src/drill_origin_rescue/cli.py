@@ -11,6 +11,7 @@ from gerbonara.utils import MM
 from .parser import load
 from .solver import solve, InputError
 from .output import report_files, zip_bytes
+from . import __version__
 
 
 def run(copper, drill, out, minimum=4, coverage=0.8, tolerance=0.02):
@@ -66,7 +67,7 @@ def run(copper, drill, out, minimum=4, coverage=0.8, tolerance=0.02):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Infer only a well-supported uniform drill translation and produce a review draft.")
-    parser.add_argument("--version", action="version", version="0.1.0")
+    parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument("copper"); parser.add_argument("drill"); parser.add_argument("--out", required=True)
     parser.add_argument("--min-matches", type=int, default=4); parser.add_argument("--min-coverage", type=float, default=0.8); parser.add_argument("--tolerance-mm", type=float, default=0.02)
     args = parser.parse_args(argv)
