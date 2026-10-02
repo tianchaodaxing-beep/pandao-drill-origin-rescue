@@ -1,0 +1,70 @@
+{
+  "format": "drill-origin-rescue-report/1",
+  "hole_count": 8,
+  "inputs": {
+    "copper": {
+      "name": "copper.gbr",
+      "sha256": "452bc99600f984759b287a67d0b3d3d7022a4f588526e027135ddaf8f1e1631a"
+    },
+    "drill": {
+      "name": "drill-offset.drl",
+      "sha256": "e5f69f8a83f17ba4743eea93a8037ce9db219edb0af28bec8bdd14563ed8dd3b"
+    }
+  },
+  "match_coverage": 0.875,
+  "matches": [
+    {
+      "hole_index": 0,
+      "pad_index": 0,
+      "residual_mm": 0.0
+    },
+    {
+      "hole_index": 1,
+      "pad_index": 1,
+      "residual_mm": 0.0
+    },
+    {
+      "hole_index": 2,
+      "pad_index": 2,
+      "residual_mm": 0.0
+    },
+    {
+      "hole_index": 3,
+      "pad_index": 3,
+      "residual_mm": 0.0
+    },
+    {
+      "hole_index": 4,
+      "pad_index": 4,
+      "residual_mm": 0.0
+    },
+    {
+      "hole_index": 5,
+      "pad_index": 5,
+      "residual_mm": 0.0
+    },
+    {
+      "hole_index": 6,
+      "pad_index": 6,
+      "residual_mm": 0.0
+    }
+  ],
+  "maximum_residual_mm": 0.0,
+  "notice": "Review draft. Verify all fabrication layers and original fabrication requirements before use.",
+  "output_drill_sha256": "eb6ba9ab5372e99fab14b4579dd0423cf66df2cb752eee8817fa3e471e9dbb82",
+  "pad_count": 9,
+  "reason": "One distinct translation satisfies the evidence thresholds. Inspect the overlay and unmatched holes.",
+  "status": "recovered",
+  "thresholds": {
+    "maximum_residual_mm": 0.02,
+    "minimum_coverage": 0.8,
+    "minimum_matches": 4
+  },
+  "translation_mm": [
+    -5.0,
+    -7.0
+  ],
+  "unmatched_holes": [
+    7
+  ]
+}

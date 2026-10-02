@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "drill-origin-rescue"
+version = "0.1.0"
+description = "Conservative offline Gerber and Excellon origin mismatch diagnosis"
+requires-python = ">=3.12"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "PANDAO", email = "tianchaodaxing@gmail.com"}]
+dependencies = ["gerbonara==1.6.3"]
+[project.scripts]
+drill-origin-rescue = "drill_origin_rescue.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+pythonpath = ["src", "scripts"]
+testpaths = ["tests"]

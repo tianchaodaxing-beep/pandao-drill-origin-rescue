@@ -1,0 +1,47 @@
+{
+  "synthetic": true,
+  "known_pad_centers_mm": [
+    [
+      2,
+      3
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      16,
+      6
+    ],
+    [
+      5,
+      12
+    ],
+    [
+      14,
+      15
+    ],
+    [
+      24,
+      9
+    ],
+    [
+      22,
+      20
+    ]
+  ],
+  "shifted_translation_mm": [
+    -5,
+    -7
+  ],
+  "round_hits": 8,
+  "matched_hits": 7,
+  "unmatched_hits": 1,
+  "expected_statuses": {
+    "drill-offset.drl": "recovered",
+    "aligned-drill.drl": "already_aligned",
+    "ambiguous-drill.drl": "review_required",
+    "missing-units.drl": "invalid",
+    "slots.drl": "invalid"
+  }
+}
